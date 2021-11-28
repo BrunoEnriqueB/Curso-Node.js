@@ -1,0 +1,16 @@
+{
+  "name": "tarefa_2",
+  "version": "1.0.0",
+  "description": "Usando Chalk e Inquirer",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bruno Enrique",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.0.0",
+    "inquirer": "^8.2.0"
+  }
+}
