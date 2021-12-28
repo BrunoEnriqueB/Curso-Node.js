@@ -1,0 +1,18 @@
+{
+  "name": "tarefa_3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon index.js localhost 5000"
+  },
+  "keywords": [],
+  "author": "Bruno Enrique <brunobaronenrique@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
+  }
+}
