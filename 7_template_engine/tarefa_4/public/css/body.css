@@ -1,0 +1,14 @@
+
+h1 {
+    color: rgb(170, 0, 0);
+    margin-bottom: 20px;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+}
+
+li {
+    margin-bottom: 10px;
+}
