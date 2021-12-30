@@ -1,0 +1,9 @@
+<link rel="stylesheet" href="/css/body.css">
+
+<h1>Home</h1>
+<ul>
+    {{#each products}}
+        <li><a href="/produto/{{this.id}}">{{this.name}}</a></li>
+    {{/each}}
+</ul>
+

@@ -1,0 +1,12 @@
+{{!-- Usuário só pode acessar se estiver autenticado --}}
+{{#if auth}}
+    <h1>dashboard</h1>
+    <a href="/">Voltar!</a>
+{{/if}}
+<ul>
+    {{#each items}}
+        <li>
+            {{this}}
+        </li>
+    {{/each}}
+</ul>
