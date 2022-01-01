@@ -1,6 +1,6 @@
 import express from 'express';
 import { engine } from 'express-handlebars';
-import { pool } from './db/conn.js';
+import {pool as conn} from './db/conn.js';
 
 const app = express();
 const port = 3000;
@@ -20,7 +20,7 @@ app.use(express.static('public'));
 app.get('/books', (req, res) => { //resgatando os dados do nosso banco
     const sql = `SELECT * FROM books`;
 
-    pool.query(sql, (err, data) => {
+    conn.query(sql, (err, data) => {
         if (err) {
             console.log(err);
             return;
@@ -35,7 +35,7 @@ app.get('/book/:id', (req, res) => {
     const id = req.params.id;
     const sql = `SELECT * FROM books WHERE id = ${id}`;
 
-    pool.query(sql, (err, data) => {    
+    conn.query(sql, (err, data) => {    
         if(err) {
             console.log(err);
             return;
@@ -52,7 +52,7 @@ app.get('/book/edit/:id', (req, res) => {
 
     const sql = `SELECT * FROM books WHERE id = ${id}`;
     
-    pool.query(sql, (err, data) => {
+    conn.query(sql, (err, data) => {
         if (err) {
             console.log(err);
             return;
@@ -71,7 +71,7 @@ app.post('/book/updatebook', (req, res) => {
 
     const sql = `UPDATE books SET title='${title}', page='${page}' WHERE id=${id}`;
 
-    pool.query(sql, (err, data) => {
+    conn.query(sql, (err, data) => {
         if (err) {
             console.log(err);
             return;
@@ -86,7 +86,7 @@ app.post('/book/remove/:id', (req, res) => {
 
     const sql = `DELETE FROM books WHERE id=${id}`;
 
-    pool.query(sql, (err, data) => {
+    conn.query(sql, (err, data) => {
         if(err) {
             console.log(err);
             return;
@@ -105,14 +105,13 @@ app.post('/books/insertbook', (req, res) => { //rota para inserir dados
     const pagety = req.body.pagety;
 
     const sql = `INSERT INTO books (title, page) VALUES ('${title}', '${pagety}')`;
-    pool.query(sql, (err) => {
+    conn.query(sql, (err) => {
         if (err) {
             console.log(err);
         }
         res.redirect('/books');
     });
 });
-
 
 app.listen((port), () => {
     
