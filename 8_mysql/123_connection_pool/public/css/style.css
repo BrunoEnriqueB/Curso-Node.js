@@ -1,0 +1,142 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a, a:visited {
+    color: #000;
+}
+
+#navbar {
+    border-bottom: 1px solid #CCC;
+    padding: 1em;
+    
+}
+
+#navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    margin: 0;
+}
+
+.addBook {
+    margin: auto;
+}
+
+.seeBooks {
+    width: max-content;
+    display: block;
+    margin: auto;
+}
+
+.form, .books-container {
+    width: 450px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .5em;
+}
+
+.form-control label {
+    font-weight: bold;
+    margin-bottom: 0.3em;
+}
+
+.form-control input {
+    padding:5px ;
+}
+
+.readyBtn {
+    width: 120px;
+    margin: 0.7em auto;
+    height: 40px;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* BOOKS */
+.books-container div {
+    border-bottom: 1px solid #CCC;
+    margin: 5px;
+
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.actions a, .actions form input {
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
+    padding: 5px 12px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: 0;
+    transition: .5s ease-in-out;
+}
+
+.actions a{
+    background-color: rgb(13, 0, 134);
+}
+
+.actions a:hover {
+    text-align: none;
+    padding: 5.2px 12.2px;
+    font-size: 16.5px;
+}
+
+.actions form input:hover {
+    text-align: none;
+    padding: 5.2px 12.2px;
+    font-size: 16.5px;
+}
+
+
+.actions form input {
+    background-color: rgb(145, 0, 0);
+
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.items {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}

@@ -1,0 +1,92 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a, a:visited {
+    color: #000;
+}
+
+#navbar {
+    border-bottom: 1px solid #CCC;
+    padding: 1em;
+    
+}
+
+#navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    margin: 0;
+}
+
+.addBook {
+    margin: auto;
+}
+
+.seeBooks {
+    width: max-content;
+    display: block;
+    margin: auto;
+}
+
+.form, .books-container {
+    width: 450px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .5em;
+}
+
+.form-control label {
+    font-weight: bold;
+    margin-bottom: 0.3em;
+}
+
+.form-control input {
+    padding:5px ;
+}
+
+.readyBtn {
+    width: 120px;
+    margin: 0.7em auto;
+    height: 40px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+/* BOOKS */
+.books-container div {
+    border-bottom: 1px solid #CCC;
+    margin: 5px;
+
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.container {
+    text-align: center;
+}
+

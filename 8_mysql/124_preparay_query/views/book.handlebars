@@ -1,0 +1,17 @@
+<div class="book-page">
+    <div class="container">
+        {{#with book}}
+        <h1>{{title}}</h1>
+        <div class="items">
+            <p>Este livro tem {{page}} páginas</p>
+            <div class="actions">
+                <a href="/book/edit/{{id}}">Editar</a>
+                <form action="/book/remove/{{id}}" method="POST">
+                    <input type="submit" value="Remover">
+                </form>
+            </div>
+        </div>
+        {{/with}}
+        <a href="/books">Ver livros</a>
+    </div>
+</div>
