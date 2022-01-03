@@ -1,0 +1,22 @@
+{
+  "name": "129_instalando_sequelize",
+  "version": "1.0.0",
+  "description": "Seção 9 - Sequelize",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js localhost 3000"
+  },
+  "author": "Bruno Enrique",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.2",
+    "express-handlebars": "^6.0.2",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.12.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
