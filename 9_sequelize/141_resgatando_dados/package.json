@@ -1,0 +1,22 @@
+{
+  "name": "139_relacionamentos",
+  "version": "1.0.0",
+  "description": "\"Sequelize\"",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.17.2",
+    "express-handlebars": "^6.0.2",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.12.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js localhost 3000"
+  },
+  "author": "Bruno Enrique",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
