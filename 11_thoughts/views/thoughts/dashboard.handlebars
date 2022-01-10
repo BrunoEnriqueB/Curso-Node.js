@@ -3,5 +3,12 @@
         <h2>Dashboard</h2>
         <a href="/thoughts/add" class="btn">Criar Pensamento</a>
     </div>
-    <h3>Seus Pensamento</h3>
+    <h3>Seus Pensamentos</h3>
+    <div class="thoughts-messages">
+        {{#each thoughts}}
+            <ul>
+                <li>{{this.title}}</li>
+            </ul>
+        {{/each}}
+    </div>
 </div>

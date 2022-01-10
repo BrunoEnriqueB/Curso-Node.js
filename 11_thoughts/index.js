@@ -35,7 +35,7 @@ app.use(
         cookie: { //cookie que vai ter no pc do usuário
             secure: false,
             maxAge: 360000, //tempo que ele dura
-            expires: new Date(Date.now() + 36000), // podemos forçar ele expirar, nesse caso vai expirar em 1 dia
+            expires: new Date(Date.now() + 360000), // podemos forçar ele expirar, nesse caso vai expirar em 1 dia
             httpOnly: true //o cookie vem configurado pra HTTPS, mas como vamos usar em servidor local, configuramos pra HTTP
         }
     }),

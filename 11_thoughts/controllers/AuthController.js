@@ -10,6 +10,7 @@ module.exports = class AuthController {
     static async loginPost(req, res) {
         const { email, password } = req.body;
 
+
         //find user
         const user = await User.findOne({where: {email: email}});
         // verify if user exists
@@ -69,19 +70,20 @@ module.exports = class AuthController {
              password: hashedPassword
          }
 
-        try {
-            const createdUser = await User.create(user);
-            //initializate session
-            req.session.userid = createdUser.id;
+        const createdUser = await User.create(user);
+        //initializate session
+        req.session.userid = createdUser.id;
 
+
+        try {
             req.flash('message', 'Usuário criado com sucesso!');
             req.session.save(() => {
                 res.redirect('/'); 
             });
-
-        } catch (error) {
-            console.log(err)
+        } catch (err) {
+            console.log(err);
         }
+        
     }
 
     static logout(req, res) {
