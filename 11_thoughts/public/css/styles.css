@@ -67,7 +67,7 @@
 }
 
 .auth-container h2 {
-    margin: 1em;
+    margin: 1em 0;
     color: #FFF;
     border-left: 4px solid #F6982D;
     padding: .3em;
@@ -119,10 +119,14 @@ form input[type='submit']:hover, .btn:hover {
 
 footer {
     height: 150px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     border-top: 1px solid #F6982D;
+    position: absolute;
+    bottom: 0;
+
 }
 
 footer span {
