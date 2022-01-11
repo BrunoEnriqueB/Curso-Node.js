@@ -12,4 +12,7 @@ router.get('/', ThoughtController.showAll);
 
 router.post('/remove', checkAuth, ThoughtController.remove);
 
+router.get('/edit/:id', checkAuth, ThoughtController.edit);
+router.post('/edit', checkAuth, ThoughtController.editPost);
+
 module.exports = router;
