@@ -10,4 +10,6 @@ router.post('/add', ThoughtController.addThought)
 router.get('/dashboard', checkAuth, ThoughtController.dashboard); //checkauth entra como middleware e vai ser sempre executado quando a rota for acessada
 router.get('/', ThoughtController.showAll);
 
+router.post('/remove', checkAuth, ThoughtController.remove);
+
 module.exports = router;
