@@ -29,5 +29,11 @@ module.exports = class Product {
         const product = conn.db().collection('product').findOne({_id: ObjectId(id)});
         return product;
     }
+
+    static removeProduct(id) {
+        conn.db().collection('product').deleteOne({_id: ObjectId(id)});
+
+        return;
+    }
 }
 
