@@ -4,7 +4,6 @@ const Product = require('../models/Product');
 module.exports = class ProductController {
     static showAllProducts = async (req, res) => {
         const products = await Product.findAll();
-        console.log(products)
         res.render('products/allproducts', {products});
     }
 
@@ -24,6 +23,15 @@ module.exports = class ProductController {
         } catch (error) {
             console.log(error)
         }
+    }
+
+    static showOneProduct = async (req, res) => {
+        const { id } = req.params;
+
+        const product = await Product.findOne(id)
+
+        res.render('products/product', {product});
+        
     }
 
 }

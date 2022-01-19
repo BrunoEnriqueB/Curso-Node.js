@@ -1,4 +1,5 @@
 const conn = require('../db/conn');
+const { ObjectId } = require('mongodb'); //adicionar a estrutura de object ID que existe por padrão no MongoDB
 module.exports = class Product {
     constructor(name, description, price, quantity, image) {
         this.name = name;
@@ -22,6 +23,11 @@ module.exports = class Product {
     static findAll() {
         const products = conn.db().collection('product').find().toArray();
         return products;
+    }
+
+    static findOne(id) {
+        const product = conn.db().collection('product').findOne({_id: ObjectId(id)});
+        return product;
     }
 }
 

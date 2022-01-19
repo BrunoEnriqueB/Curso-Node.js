@@ -84,6 +84,7 @@ header {
   .products {
     display: flex;
     flex-wrap: wrap;
+    gap: 30px;
   }
   
   .product {
@@ -93,9 +94,26 @@ header {
     margin-bottom: 1em;
   }
   .product img {
-    max-width: 100%;
+    max-width: 300px;
     margin-bottom: 0.5em;
   }
   
   .product h3 {
     margin-bottom: 1em;
+  }
+
+  .product-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-page img {
+    max-width: 250px;
+    margin-bottom: 1em;
+  }
+  
+  .product-page p {
+    margin-bottom: 1em;
+  }
