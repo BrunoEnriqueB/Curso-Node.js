@@ -7,7 +7,7 @@ module.exports = class ProductController {
         res.render('products/allproducts', {products});
     }
 
-    static create(req, res) {
+    static create = (req, res) => {
         res.render('products/create')
     }
 
@@ -42,7 +42,23 @@ module.exports = class ProductController {
         } catch (error) {
             console.log(error);
         }
-        
+    }
+
+    static edit = async (req, res) => {
+        const { id } = req.params;
+        const product = await Product.findOne(id)
+
+        res.render('products/edit', { product });
+    }
+
+    static editProduct = async (req, res) => {
+        const { id, name, description, price, quantity, image } = req.body;
+
+        const product = new Product(name, description, price, quantity, image);
+
+        await product.updateOne(id);
+
+        res.redirect('/products');
     }
 
 }

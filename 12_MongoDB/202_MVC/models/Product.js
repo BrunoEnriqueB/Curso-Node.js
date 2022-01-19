@@ -35,5 +35,10 @@ module.exports = class Product {
 
         return;
     }
+
+    updateOne(id) {
+        conn.db().collection('product').updateOne({_id: ObjectId(id)}, {$set:this}); //tem q colocar o set this pra mostrar quais dados serão atualizados
+        return;
+    }
 }
 
