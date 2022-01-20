@@ -28,7 +28,7 @@ module.exports = class ProductController {
 
     static showOneProduct = async (req, res) => {
         const { id } = req.params;
-        const product = await Product.findOne({_id: id}).lean()
+        const product = await Product.findById(id).lean()
 
         res.render('products/product', { product });
         
@@ -37,7 +37,7 @@ module.exports = class ProductController {
     static deleteOneProduct = async (req, res) => {
         try {
             const { id } = req.params;
-            await Product.removeProduct(id);
+            await Product.findByIdAndRemove(id);
 
             res.redirect('/products');
         } catch (error) {
