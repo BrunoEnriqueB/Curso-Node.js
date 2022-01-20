@@ -1,44 +1,16 @@
-const conn = require('../db/conn');
-const { ObjectId } = require('mongodb'); //adicionar a estrutura de object ID que existe por padrão no MongoDB
-module.exports = class Product {
-    constructor(name, description, price, quantity, image) {
-        this.name = name;
-        this.description = description;
-        this.price = price;
-        this.quantity = quantity;
-        this.image = image;
-    }
+const mongoose = require('mongoose');
 
-    save() {
-        const product = conn.db().collection('product').insertOne({
-            name: this.name,
-            description: this.description,
-            price: this.price,
-            quantity: this.quantity,
-            image: this.image
-        });
-        return product;
-    }
+const { Schema } = mongoose;
 
-    static findAll() {
-        const products = conn.db().collection('product').find().toArray();
-        return products;
-    }
+const Product = mongoose.model(
+  'Product', //nome da collection
+  new Schema ({ //Instanciando o Schema já que ele é a estrutura do Model
+    name: {type: String, required: true},
+    description: {type: String, required: true},
+    price: {type: Number, required: true},
+    quantity: {type: Number, required: true},
+    image: {type: String, required: true}    
+  })
+)
 
-    static findOne(id) {
-        const product = conn.db().collection('product').findOne({_id: ObjectId(id)});
-        return product;
-    }
-
-    static removeProduct(id) {
-        conn.db().collection('product').deleteOne({_id: ObjectId(id)});
-
-        return;
-    }
-
-    updateOne(id) {
-        conn.db().collection('product').updateOne({_id: ObjectId(id)}, {$set:this}); //tem q colocar o set this pra mostrar quais dados serão atualizados
-        return;
-    }
-}
-
+module.exports = Product;
