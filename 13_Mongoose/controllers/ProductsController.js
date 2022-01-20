@@ -15,7 +15,7 @@ module.exports = class ProductController {
         try {
             const { name, description, price, quantity, image } = req.body;
 
-            const product = new Product(name, description, price, quantity, image);
+            const product = new Product({name, description, price, quantity, image});
 
             await product.save();
 
