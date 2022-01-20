@@ -1,19 +1,10 @@
-const { MongoClient } = require('mongodb');
+const mongoose = require('mongoose');
 
-//cria o banco na hora de conectar
-const url = "mongodb://localhost:27017/testemongodb";
-
-const client = new MongoClient(url)
-
-const run = async () => {
-    try {
-        await client.connect();
-        console.log('Conectando ao MongoDB')
-    } catch (error) {
-        console.log(error)
-    }
+async function main() {
+  await mongoose.connect('mongodb://localhost:27017/testemongoose');
+  //console.log('conectou ao mongo db com mongoose');
 }
 
-run();
+main().catch(err => console.log(err));
 
-module.exports = client;
+module.exports = main();

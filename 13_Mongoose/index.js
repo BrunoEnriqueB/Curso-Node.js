@@ -1,6 +1,6 @@
-const express = require('express');
+ const express = require('express');
 const { engine } = require('express-handlebars');
-const { client } = require('./db/conn')
+const { main } = require('./db/conn')
 const productsRouter = require('./routes/productsRoutes')
 
 const app = express();
